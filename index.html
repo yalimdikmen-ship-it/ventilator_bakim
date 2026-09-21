@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#0b1f33" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="icon-192.png" />
+<title>Vardiya Başlangıcı | Havayolu & Ventilatör</title>
+<style>
+:root{--navy:#0b1f33;--navy2:#123b57;--turq:#22c7c9;--bg:#f4f7fa;--card:#fff;--text:#14212b;--muted:#60717e;--ok:#1f7a4d;--warn:#a96500;--bad:#b42318;--line:#dce5eb}
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+header{background:linear-gradient(145deg,var(--navy),var(--navy2));color:#fff;padding:22px 18px 26px;position:sticky;top:0;z-index:5;box-shadow:0 2px 12px #0002}
+.kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b9f1f2;font-weight:700}.title{font-size:23px;font-weight:800;line-height:1.15;margin-top:5px}.subtitle{font-size:13px;opacity:.88;margin-top:7px;line-height:1.4}
+main{max-width:760px;margin:0 auto;padding:14px 14px 90px}.notice{background:#eefafa;border:1px solid #bdeced;border-radius:14px;padding:12px 13px;margin-bottom:12px;font-size:13px;line-height:1.45}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:10px 0;overflow:hidden;box-shadow:0 2px 8px #0b1f330d}.cardhead{padding:14px 14px 10px}.num{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:9px;background:var(--navy);color:#fff;font-weight:800;margin-right:8px}.q{font-weight:750;font-size:16px;vertical-align:middle}.hint{font-size:12.5px;color:var(--muted);padding:0 14px 12px;line-height:1.4}
+.actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;padding:0 12px 13px}.actions button{border:1px solid var(--line);background:#fff;border-radius:11px;padding:10px 6px;font-weight:700;font-size:13px;color:var(--text)}.actions button.active.ok{background:#e7f6ee;border-color:#9bd5b6;color:var(--ok)}.actions button.active.bad{background:#fff0ee;border-color:#efb1aa;color:var(--bad)}.actions button.active.na{background:#f0f3f5;color:#56636b}
+.algo{display:none;border-top:1px solid #f0d4d0;background:#fff7f6;padding:13px 14px 14px}.algo.show{display:block}.algo h4{margin:0 0 8px;color:var(--bad)}.algo ol{padding-left:20px;margin:7px 0}.algo li{margin:7px 0;line-height:1.4}.evidence{margin-top:9px;border:1px dashed #a9c9cf;background:#f6fcfc;border-radius:10px;padding:9px 10px;font-size:12.5px;color:#3f5963;display:none}.evidence.show{display:block}.why{border:0;background:transparent;color:#0b6570;font-weight:750;padding:4px 0;text-decoration:underline;text-underline-offset:3px}
+#summary{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -4px 16px #0001;z-index:10}.suminner{max-width:760px;margin:auto;display:flex;align-items:center;gap:10px}.progress{flex:1;height:9px;border-radius:8px;background:#e7edf1;overflow:hidden}.bar{height:100%;width:0;background:var(--turq);transition:.25s}.count{font-size:12px;color:var(--muted);min-width:70px;text-align:right}.reset{border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px 10px;font-weight:700}
+.sectiontitle{font-size:13px;color:var(--muted);font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin:20px 2px 8px}.sources{font-size:12.5px;line-height:1.5;color:#465762}.sources a{color:#0b6570}.danger{font-weight:800;color:var(--bad)}
+</style>
+</head>
+<body>
+<header>
+  <div class="kicker">Yoğun Bakım Hemşirelik KDS • Pilot</div>
+  <div class="title">Vardiya Başlangıcı: Havayolu & Ventilatör</div>
+  <div class="subtitle">Checklist → sorun varsa mikro-algoritma → “Neden?” kanıt notu</div>
+</header>
+<main>
+<div class="notice"><b>Amaç:</b> Entübe erişkin hastada her vardiya başında kısa ve standart güvenlik taraması. Hasta tanımlayıcı veri kaydetmez. Klinik yargının veya kurum protokollerinin yerine geçmez.</div>
+
+<div class="card" data-item="1">
+ <div class="cardhead"><span class="num">1</span><span class="q">Endotrakeal/trakeostomi tüpü güvenli mi?</span></div>
+ <div class="hint">Tüp derinliği önceki kayıtla uyumlu, sabitleme sağlam, çekilme/migrasyon bulgusu yok.</div>
+ <div class="actions"><button class="ok">✓ Uygun</button><button class="bad">! Sorun var</button><button class="na">N/A</button></div>
+ <div class="algo"><h4>Tüp güvenliği algoritması</h4><ol><li>Tüp üzerindeki cm işaretini önceki kayıtla karşılaştır.</li><li>Sabitleyiciyi, dudak/ağız köşesini ve cildi kontrol et.</li><li>Yeni derinlik değişikliği, belirgin kaçak, desatürasyon veya ventilatör hacim kaybı varsa tüp yerini doğrulat.</li><li class="danger">Şüpheli dislokasyon/ekstübasyon: acil havayolu yardımını çağır.</li></ol><button class="why">Neden?</button><div class="evidence">AARC hasta–ventilatör değerlendirme kılavuzu; yapay havayolunun pozisyonu, güvenliği ve cilt temas alanlarının sistematik değerlendirilmesini önerir.</div></div>
+</div>
+
+<div class="card" data-item="2">
+ <div class="cardhead"><span class="num">2</span><span class="q">Cuff basıncı 20–30 cmH₂O mu?</span></div>
+ <div class="hint"><b>Her vardiya başında manometre ile ölç.</b> Büyük pozisyon değişikliği, prone/supine dönüş, transfer, tüp manipülasyonu veya kaçak şüphesinde yeniden ölç.</div>
+ <div class="actions"><button class="ok">✓ 20–30</button><button class="bad">! Hedef dışı</button><button class="na">N/A</button></div>
+ <div class="algo"><h4>Cuff basıncı algoritması</h4><ol><li><b>&lt;20 cmH₂O:</b> kaçağı, cuff bütünlüğünü ve tüp pozisyonunu değerlendir; hedef aralığa getir.</li><li><b>&gt;30 cmH₂O:</b> aşırı basıncı azalt; 20–30 cmH₂O hedefle.</li><li>Hedef basınç korunamıyorsa veya tekrarlayan kaçak varsa nedeni değerlendirilmek üzere eskale et.</li></ol><button class="why">Neden?</button><div class="evidence">AARC 2024: cuff basıncının manometreyle ölçülmesi ve 20–30 cmH₂O aralığında tutulması güçlü öneridir. Ölçüm sıklığı evrensel olarak belirlenmemiştir; “vardiya başı” bu PWA’nın kurumsal standardizasyon kararıdır.</div></div>
+</div>
+
+<div class="card" data-item="3">
+ <div class="cardhead"><span class="num">3</span><span class="q">Sekresyon/aspirasyon gereksinimi değerlendirildi mi?</span></div>
+ <div class="hint">Görünür/işitilebilir sekresyon, ventilatör dalga formunda saw-tooth, artan havayolu basıncı veya sekresyona bağlı klinik bulgu var mı?</div>
+ <div class="actions"><button class="ok">✓ Değerlendirildi</button><button class="bad">! Aspirasyon gerekebilir</button><button class="na">N/A</button></div>
+ <div class="algo"><h4>Endotrakeal aspirasyon mikro-algoritması</h4><ol><li>Klinik gereksinimi doğrula; rutin/saatlik aspirasyon yapma.</li><li>Preoksijenasyonu klinik duruma göre uygula.</li><li>Önce yüzeyel aspirasyon; yetersizse derin aspirasyonu değerlendir.</li><li>Kateter ETT iç çapının yaklaşık &lt;%50’sini kaplasın.</li><li>Tek aspirasyon süresini ≤15 sn tut.</li><li><b>Rutin serum fizyolojik instilasyonu yapma.</b></li></ol><button class="why">Neden?</button><div class="evidence">AARC 2022 Yapay Havayolu Aspirasyon Kılavuzu: gereksinim temelli aspirasyon, preoksijenasyon, ≤15 sn işlem süresi ve rutin SF instilasyonundan kaçınma önerilir.</div></div>
+</div>
+
+<div class="card" data-item="4">
+ <div class="cardhead"><span class="num">4</span><span class="q">Ventilatör ve devre güvenli mi?</span></div>
+ <div class="hint">Mod, FiO₂, PEEP ve temel ayarlar planla uyumlu; alarmlar aktif; bağlantılar sağlam; kondensat hastaya doğru akmıyor.</div>
+ <div class="actions"><button class="ok">✓ Uygun</button><button class="bad">! Sorun var</button><button class="na">N/A</button></div>
+ <div class="algo"><h4>Ventilatör/devre algoritması</h4><ol><li>Ventilatör ayarlarını güncel istem/hedeflerle karşılaştır.</li><li>Alarmların kapalı veya uygunsuz geniş sınırda olmadığını doğrula.</li><li>Tüm devre bağlantılarını ve HME/nemlendirmeyi kontrol et.</li><li>Kondensat varsa hastadan uzağa güvenli biçimde boşalt.</li><li>Devreyi yalnızca kirli/bozuksa değiştir; rutin takvim değişimi yapma.</li><li class="danger">Ani basınç/hacim değişimi, kaçak veya desatürasyon: hastayı önce değerlendir, sonra cihazı.</li></ol><button class="why">Neden?</button><div class="evidence">SHEA/IDSA/APIC 2022: ventilatör devreleri rutin aralıklarla değil, kirlenme veya işlev bozukluğunda değiştirilmelidir; kondensat hastaya doğru boşaltılmamalıdır.</div></div>
+</div>
+
+<div class="card" data-item="5">
+ <div class="cardhead"><span class="num">5</span><span class="q">Pozisyon ve aspirasyon riski uygun mu?</span></div>
+ <div class="hint">Kontrendikasyon yoksa baş/yatak açısı 30–45°. Tüp/devre üzerinde traksiyon yok.</div>
+ <div class="actions"><button class="ok">✓ Uygun</button><button class="bad">! Düzelt</button><button class="na">N/A</button></div>
+ <div class="algo"><h4>Pozisyon algoritması</h4><ol><li>Hemodinamik, spinal veya cerrahi kontrendikasyon var mı?</li><li>Yoksa baş/yatak açısını 30–45° hedefle.</li><li>Beslenme alan hastada aspirasyon riskini ayrıca değerlendir.</li><li>Her pozisyon değişikliğinden sonra tüp/devre traksiyonunu ve gerekirse cuff basıncını yeniden kontrol et.</li></ol><button class="why">Neden?</button><div class="evidence">SHEA/IDSA/APIC 2022, kontrendikasyon yoksa 30–45° baş yüksekliğini VAP/VAE önleme yaklaşımının parçası olarak önerir.</div></div>
+</div>
+
+<div class="card" data-item="6">
+ <div class="cardhead"><span class="num">6</span><span class="q">Ağız ve mukoza bakımı uygun mu?</span></div>
+ <div class="hint">Ağız/mukoza değerlendirildi; planlı ağız hijyeni uygulanıyor; oral sekresyon birikimi yok.</div>
+ <div class="actions"><button class="ok">✓ Uygun</button><button class="bad">! Bakım gerekli</button><button class="na">N/A</button></div>
+ <div class="algo"><h4>Ağız bakımı algoritması</h4><ol><li>Dudak, dil, diş/dişeti ve mukozayı değerlendir.</li><li>Oral sekresyonu güvenli şekilde uzaklaştır.</li><li>Standart ağız hijyeni ve günlük diş fırçalamayı kurum protokolüne göre uygula.</li><li><b>Rutin klorheksidini otomatik standart olarak kullanma.</b></li><li>Mukozal travma, kanama, kandidiyazis veya ciddi kuruluk varsa özel bakım/eskalasyon yap.</li></ol><button class="why">Neden?</button><div class="evidence">SHEA/IDSA/APIC 2022 günlük diş fırçalamayı destekler; rutin klorheksidinli ağız bakımını önermez. AACN 2026 ağız hijyenini HAP önleme stratejisi olarak vurgular.</div></div>
+</div>
+
+<div class="sectiontitle">Kaynak omurgası</div>
+<div class="card"><div class="cardhead sources">
+• AARC Clinical Practice Guideline: Patient–Ventilator Assessment, 2024.<br>
+• AARC Clinical Practice Guideline: Artificial Airway Suctioning, 2022.<br>
+• SHEA/IDSA/APIC: Strategies to Prevent VAP/VAE and Nonventilator HAP, 2022 Update.<br>
+• AACN Practice Alert: Effective Oral Care Practices for Acutely and Critically Ill Patients, 2026.<br><br>
+<b>Pilot notu:</b> “Her vardiya başında cuff basıncı ölçümü” bu prototipin standardizasyon kuralıdır; hedef 20–30 cmH₂O kılavuz temellidir, ideal ölçüm sıklığı için evrensel kılavuz standardı yoktur.
+</div></div>
+</main>
+<div id="summary"><div class="suminner"><button class="reset" id="reset">Sıfırla</button><div class="progress"><div class="bar" id="bar"></div></div><div class="count" id="count">0 / 6</div></div></div>
+<script>
+const cards=[...document.querySelectorAll('.card[data-item]')];
+function update(){let done=cards.filter(c=>c.querySelector('.actions button.active')).length;document.getElementById('count').textContent=`${done} / ${cards.length}`;document.getElementById('bar').style.width=`${done/cards.length*100}%`;}
+cards.forEach(card=>{const btns=[...card.querySelectorAll('.actions button')]; const algo=card.querySelector('.algo'); btns.forEach(b=>b.addEventListener('click',()=>{btns.forEach(x=>x.classList.remove('active'));b.classList.add('active'); if(b.classList.contains('bad')) algo.classList.add('show'); else algo.classList.remove('show'); update();})); const why=card.querySelector('.why'); if(why) why.addEventListener('click',()=>card.querySelector('.evidence').classList.toggle('show'));});
+document.getElementById('reset').addEventListener('click',()=>{cards.forEach(c=>{c.querySelectorAll('button.active').forEach(b=>b.classList.remove('active'));c.querySelector('.algo')?.classList.remove('show');c.querySelector('.evidence')?.classList.remove('show');});update();});
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js'));}
+update();
+</script>
+</body>
+</html>
